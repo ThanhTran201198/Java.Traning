@@ -1,0 +1,8 @@
+package fis.java.topic_02.collections02;
+
+public class Main {
+	public static void main(String[] args) {
+		DataForTest d=new DataForTest();
+		System.out.println(d.ntphuoc.coTheDangKyHoc(d.ltrA1));
+	}
+}

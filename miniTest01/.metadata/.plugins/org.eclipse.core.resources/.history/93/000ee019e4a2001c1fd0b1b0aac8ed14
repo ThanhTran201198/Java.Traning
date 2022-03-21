@@ -1,0 +1,25 @@
+package fis.miniTest01;
+
+public class dasdas {
+	public static void main(String[] args) {
+		Thread thread3=new Thread(new Runnable() {
+			@Override
+			public void run() {
+				for(int i=0;i<10;i++) {
+					System.out.println("thread3 :"+i);
+				}
+				
+			}  
+		});
+		thread3.start();
+		Thread thread4=new Thread(new Runnable() {
+			@Override
+			public void run() {
+				for(int i=0;i<10;i++) {
+					System.out.println("thread4 :"+i);
+				}
+			}  
+		});
+		thread4.start();
+	}
+}

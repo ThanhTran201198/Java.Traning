@@ -1,0 +1,23 @@
+package fis.java.topic01.practice02;
+
+import java.util.ArrayList;
+
+public class Summary {
+	private ArrayList<BicycleTicket> bicycleTickets=new ArrayList<BicycleTicket>();
+	private ArrayList<MotorbikeTicket> motorbikeTickets=new ArrayList<MotorbikeTicket>();
+	public ArrayList<BicycleTicket> getBicycleTickets() {
+		return bicycleTickets;
+	}
+	public ArrayList<MotorbikeTicket> getMotorbikeTickets() {
+		return motorbikeTickets;
+	}
+	public void setBicycleTickets(ArrayList<BicycleTicket> bicycleTickets) {
+		this.bicycleTickets = bicycleTickets;
+	}
+	public void setMotorbikeTickets(ArrayList<MotorbikeTicket> motorbikeTickets) {
+		this.motorbikeTickets = motorbikeTickets;
+	}
+	public int sum() {
+		return bicycleTickets.size()+motorbikeTickets.size();
+	}
+}

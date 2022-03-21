@@ -1,0 +1,249 @@
+*{
+    box-sizing: inherit;
+    margin: 0;
+}
+html{
+    font-size: 16px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #cd1818;
+    
+    
+}
+.center-form{
+    margin: 0 70px;
+}
+.header{
+    display: flex;
+    height: 56px;
+    background-color: #cd1818;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.header .logo{
+    height: 50px;
+    margin-right: 32px;
+    text-align: center;
+}
+.header .logo img{
+    height: 50px;
+}
+.header .list-item{
+    text-align: center;
+}
+.search-form{
+    flex: 1;
+    display: flex;
+    height: 38px;
+}
+.search-form > input{
+    flex: 1;
+    height: 100%;
+}
+.search-form > button{
+    height: 100%;
+    background-color: black;
+    width: 60px;
+    border: none;
+}
+.search-form > button>i{
+   color: white;
+}
+.nav-item{
+    display: inline-block;
+    margin: 0 10px;
+}
+.nav-item a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    
+}
+.nav-item a i{
+    font-size: 20px;    
+}
+.menu{
+    background-color: black;
+    height: 36px;
+    /* text-align: center; */
+    line-height: 36px;
+}
+.menu ul{
+    list-style: none;
+    
+}
+.menu li{
+    margin: 0 12px;
+    display:  inline-block;
+}
+.menu a{
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+}
+.fpt-sale-coutdown{
+    text-align: center;
+}
+.category-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.category-container :hover{
+    cursor: pointer;
+}
+.category-item{
+    border: 0.5px solid #f4f4f4;
+    height: 160px;
+    flex-basis: calc(100%/6);
+    text-align: center;
+    background-color: white;
+    
+}
+
+.category-item div{
+    height: 85px;
+    width: 85px;
+    margin: 18px 56px;
+    border-radius: 50%;
+    background-color: #f4f4f4;
+}
+.category-item div img{
+    margin: 12px;
+    max-width: 60px;
+    max-height: 60px;
+}
+.category-item a{
+    color: black;
+    text-decoration: none;
+}
+.cate-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cate-item{
+    border: 0.5px solid #f4f4f4;
+    height: 140px;
+    flex-basis: calc(100%/6);
+    text-align: center;
+    background-color: white;
+}
+.cate-item div{
+    height: 80px;
+    width: 80px;
+    margin: 16px 56px;
+    border-radius: 50%;
+    /* background-color: #f4f4f4; */
+}
+.cate-item i{
+    margin: 12px;
+    color: #777;
+    font-size: 45px;
+}
+.cate-item a{
+    color: black;
+    text-decoration: none;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+.footer a{
+    display: block;
+    line-height: 2;
+    color: #3399d2;
+    text-decoration: none;
+}
+.footer a:hover{
+    text-decoration:underline;
+    color: black;
+}
+.footer i{
+    font-size: 40px;
+}
+.footer .payment a{
+    display: inline-block;
+}
+.box-laptop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.laptop-item{
+    height: 340px;
+    flex-basis: calc(100%/4);
+    background-color: white;
+    position: relative;
+    padding: 3px;
+    
+}
+.laptop-item:hover{
+    border: 2px solid #43bdbf;
+
+}
+.laptop-item:hover .buy-compare{
+    display: block;
+    
+}
+.laptop-item>a{
+    color: #474c51;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+}
+.laptop-item> a:hover{
+    color: #0168fa;
+}
+.laptop-item>p{
+    color: #cb1c22;
+    font-weight: 600;
+    font-size: 18px;
+}
+.laptop-item >a >div{
+    margin: 0;
+    border: 2px solid #cd1818;
+    border-radius: 2%;
+    text-align: center; 
+
+}
+.laptop-item >a >div img{
+    
+    color: #777;
+    font-size: 45px;
+}
+.buy-compare{
+    display: none;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+}
+
+.buy-compare a{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+}
+.laptop-item .buy {
+    background-color: #cb1c22;
+    width: 55%;
+}
+.laptop-item .buy :hover{
+    background-color:#e3565b;
+}
+.laptop-item .compare{
+    background-color: #99a2aa;
+    width: 43%;
+}
+.laptop-item .compare:hover{
+    background-color: #c9cdd1;
+}
+

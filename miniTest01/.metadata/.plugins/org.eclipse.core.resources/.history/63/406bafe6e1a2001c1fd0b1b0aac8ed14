@@ -1,0 +1,170 @@
+package fis.miniTest01;
+
+import java.util.Collections;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Account a1=new Account(1, "Nguyen Van B", "123456789123", 10000, 1);
+		Account a2=new Account(5, "Nguyen Van A", "123456789124", 10000, 1);
+		Account a3=new Account(3, "Nguyen Van D", "123456789125", 10000, 0);
+		Transaction t1=new Transaction(1,new Date(),1,2,1000,1,"a","Chuyen tien thanh cong");
+		QuanLyAccount qLA1= new QuanLyAccount();
+		qLA1.addList(a1);
+		qLA1.addList(a2);
+		qLA1.addList(a3);
+		qLA1.addListTransaction(t1);
+		Scanner sc=new Scanner(System.in);
+		Scanner sc1=new Scanner(System.in);
+//		showMenu();
+		Thread thread1=new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				String kt;
+				String t = null,name,number,number2,noiDung,traLoi;
+				long id;
+				double soTien;
+				int tt;
+				while(true) {
+					showMenu();
+					t=sc.nextLine();
+					switch (t) {
+					case "1": {
+						System.out.println(qLA1.getList());
+						break;
+					}
+					case "2": {
+						System.out.println("Nhap ten tai khoa : ");
+						name=sc.nextLine();
+						System.out.println("Nhap so tai khoa : ");
+						number=sc.nextLine();
+						kt=qLA1.taoAccount(name, number);
+//						String kt=qLA1.taoAccount("Nguyen Van C", "123456789125");
+						System.out.println(kt);
+						break;
+					}
+					case "3": {
+						System.out.println("Nhap id : ");
+						while(true) {
+							id=sc.nextLong();
+							if(qLA1.kiemTraID(id)) {
+								System.out.println("Nhap ten tai khoa : ");
+								name=sc1.nextLine();
+								System.out.println("Nhap trang thai : ");
+								tt=sc.nextInt();
+								kt =qLA1.capNhatAccount(id, name, tt);
+								System.out.println(kt);
+								if(kt.equals("Cap nhat thanh cong")) break;
+								
+							}
+							System.out.println("Nhap sai ID yeu cau nhap lai : ");
+						}
+						break;
+					}
+					case "4": {
+						System.out.println("Nhap id : ");
+						while(true) {
+							id=sc.nextLong();
+							if(qLA1.kiemTraID(id)) {
+								qLA1.xoaAccount(id);
+								break;
+							}
+							System.out.println("Nhap sai ID yeu cau nhap lai : ");
+						}	
+						break;
+					}
+					case "5": {
+						System.out.println("Chuyen tien tu STK : ");
+						number=sc.nextLine();
+						System.out.println("Chuyen tien den STK : ");
+						number2=sc.nextLine();
+						System.out.println("So tien chuyen khoan : ");
+						soTien=sc1.nextDouble();
+						System.out.println("Noi dung chuyen khoan : ");
+						noiDung=sc.nextLine();
+						System.out.println("Ban thuc su muon thuc hien giao dich Y/N ");
+						traLoi=sc.nextLine();
+						if(traLoi.equals("N")) break;
+						else if(traLoi.equals("Y")) {
+							System.out.println(qLA1.chuyenKhoan(number, number2, soTien,noiDung));
+						}
+						
+						break;
+					}
+					case "6": {
+						System.out.println(qLA1.getListTransaction());
+						break;
+					}
+					case "7": {
+						System.exit(0);
+						break;
+					}
+					default:
+						System.out.println("Khong co chuc nang nay");
+						break;
+					}
+					if(t=="7") break;
+			}
+			}
+		});
+		Thread thread2=new Thread(new Runnable() {
+			int size=0;
+			String dau;
+			@Override
+			public void run() {
+				while(true) {
+					
+					if(size<qLA1.getDsTransactions().size()) {
+//						Collections.sort(qLA1.getDsTransactions());
+//						for(int i=0;i<qLA1.getDsTransactions().size()-size;i++) {
+//							qLA1.thongBao(qLA1.getDsTransactions().get(i).getFromAccount(), "tru", qLA1.getDsTransactions().get(i).getAmount(), qLA1.getDsTransactions().get(i).getDate());
+//							qLA1.thongBao(qLA1.getDsTransactions().get(i).getFromAccount(), "cong", qLA1.getDsTransactions().get(i).getAmount(), qLA1.getDsTransactions().get(i).getDate());
+//						}
+						size=qLA1.getDsTransactions().size();
+						System.out.println(size);
+					}
+					
+				}
+			}  
+		});
+		Thread thread3=new Thread(new Runnable() {
+			int size=0;
+			String dau;
+			@Override
+			public void run() {
+				for(int i=0;i<20;i++) {
+					System.out.println("thread3 :"+i);
+				}
+				
+			}  
+		});
+		Thread thread4=new Thread(new Runnable() {
+			int size=0;
+			String dau;
+			@Override
+			public void run() {
+				for(int i=0;i<20;i++) {
+					System.out.println("thread4s :"+i);
+				}
+			}  
+		});
+//		thread1.start();
+//		thread2.start();
+		thread3.start();
+		thread4.start();
+	}
+	public static void showMenu() {
+        System.out.println("======HE THONG QUAN LY TAI KHOAN======");
+        System.out.println("1.Danh Sach Tai Khoan");
+        System.out.println("2.Them Moi Tai Khoan");
+        System.out.println("3.Cap Nhat Thong Tin Tai Khoan");
+        System.out.println("4.Xoa Tai Khoan");
+        System.out.println("5.Chuyen Khoan");
+        System.out.println("6.Danh Sach Giao Dich");
+        System.out.println("7.Exit");
+        System.out.println("Chon...");
+    }
+}

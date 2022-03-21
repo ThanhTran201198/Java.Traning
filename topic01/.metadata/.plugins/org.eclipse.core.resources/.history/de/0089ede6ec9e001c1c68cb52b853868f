@@ -1,0 +1,20 @@
+package fis.java.topic01.practice02;
+
+public class MotorbikeTicket extends Ticket {
+	private String IDMotorbike;
+
+	public MotorbikeTicket() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public MotorbikeTicket(int ticketNumber,String iDMotorbike) {
+		super();
+		IDMotorbike = iDMotorbike;
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	
+	
+}

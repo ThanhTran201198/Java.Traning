@@ -1,0 +1,15 @@
+package fis.miniTest01;
+
+public class abc {
+	public static void main(String[] args) {
+		abc.a();
+	}
+	public static int a(){
+		try {
+			return 2;
+		} finally {
+			return 1;
+			// TODO: handle exception
+		}
+	}
+}

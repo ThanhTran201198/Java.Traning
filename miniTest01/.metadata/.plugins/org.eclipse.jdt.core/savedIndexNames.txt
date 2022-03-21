@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\fis-jfresher\miniTest01\.metadata\.plugins\org.eclipse.jdt.core
+1003468212.index
+356374187.index

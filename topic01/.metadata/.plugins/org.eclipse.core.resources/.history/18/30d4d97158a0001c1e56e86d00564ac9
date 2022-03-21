@@ -1,0 +1,24 @@
+package fis.java.topic01.practice02;
+
+public class Ticket {
+	protected int ticketNumber;
+
+	public Ticket() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Ticket(int ticketNumber) {
+		super();
+		this.ticketNumber = ticketNumber;
+	}
+
+	public int getTicketNumber() {
+		return ticketNumber;
+	}
+
+	public void setTicketNumber(int ticketNumber) {
+		this.ticketNumber = ticketNumber;
+	}
+	
+}
