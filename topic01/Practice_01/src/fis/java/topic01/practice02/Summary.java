@@ -1,25 +1,26 @@
 package fis.java.topic01.practice02;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Summary {
-	private ArrayList<BicycleTicket> bicycleTickets=new ArrayList<BicycleTicket>();
-	private ArrayList<MotorbikeTicket> motorbikeTickets=new ArrayList<MotorbikeTicket>();
+	private List<Ticket> Tickets=new ArrayList<Ticket>();
 	
-	public void addBicycleTickets(BicycleTicket bicycleTicket) {
-		bicycleTickets.add(bicycleTicket);
+	public void addTicket(Ticket ticket) {
+		Tickets.add(ticket);
 	}
-	public void addMotorbikeTickets(MotorbikeTicket motorbikeTicket) {
-		motorbikeTickets.add(motorbikeTicket);
+	public int tongSoXe() {
+		return Tickets.size();
 	}
-	public int total() {
-		return bicycleTickets.size()+motorbikeTickets.size();
+	public double tongTien() {
+		double tien= 0;
+		for(Ticket t:Tickets) tien+=t.tienVe();
+		return tien;
 	}
-	public double totalMoney() {
-		return bicycleTickets.size()*500 + motorbikeTickets.size()*1000;
-	}
-	public double interest() {
-		return this.totalMoney()*0.9-this.total()*100;
+	public double tongTienThu() {
+		double tien= 0;
+		for(Ticket t:Tickets) tien+=t.tienThu();
+		return tien;
 	}
 	
 }

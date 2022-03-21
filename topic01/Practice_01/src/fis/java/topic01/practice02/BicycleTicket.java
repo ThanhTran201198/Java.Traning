@@ -1,15 +1,16 @@
 package fis.java.topic01.practice02;
 
 public class BicycleTicket extends Ticket{
-
-	public BicycleTicket() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	public BicycleTicket(int ticketNumber) {
 		super(ticketNumber);
-		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public double tienVe(){
+		return Constant.PRICE.XE_DAP;
+	}
+	@Override
+	public double tienThu() {
+		return 0.9*Constant.PRICE.XE_DAP-100;
 	}
 	
 }

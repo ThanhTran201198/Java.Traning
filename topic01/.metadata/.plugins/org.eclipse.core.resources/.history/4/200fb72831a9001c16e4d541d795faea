@@ -1,0 +1,22 @@
+package fis.java.topic01.practice02;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Summary {
+	private List<Ticket> Tickets=new ArrayList<Ticket>();
+	
+	public void addTicket(Ticket ticket) {
+		Tickets.add(ticket);
+	}
+	public int total() {
+		return bicycleTickets.size()+motorbikeTickets.size();
+	}
+	public double totalMoney() {
+		return bicycleTickets.size()*500 + motorbikeTickets.size()*1000;
+	}
+	public double interest() {
+		return this.totalMoney()*0.9-this.total()*100;
+	}
+	
+}

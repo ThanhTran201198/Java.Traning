@@ -1,0 +1,19 @@
+package fis.java.topic01.practice02;
+
+public class BicycleTicket extends Ticket{
+	private double price =Constant.PRICE.XE_DAP;
+	public BicycleTicket() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public BicycleTicket(int ticketNumber) {
+		super(ticketNumber);
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public double tienVe(){
+		return 1000;
+	}
+	
+}

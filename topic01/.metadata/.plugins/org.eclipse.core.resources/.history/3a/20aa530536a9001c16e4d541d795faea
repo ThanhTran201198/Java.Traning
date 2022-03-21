@@ -1,0 +1,16 @@
+package fis.java.topic01.practice02;
+
+public class BicycleTicket extends Ticket{
+	public BicycleTicket() {
+		super();
+	}
+
+	public BicycleTicket(int ticketNumber) {
+		super(ticketNumber);
+	}
+	@Override
+	public double tienVe(){
+		return Constant.PRICE.XE_DAP;
+	}
+	
+}

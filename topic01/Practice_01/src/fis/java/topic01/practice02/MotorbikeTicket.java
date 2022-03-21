@@ -2,25 +2,19 @@ package fis.java.topic01.practice02;
 
 public class MotorbikeTicket extends Ticket {
 	private String IDMotorbike;
-
 	public MotorbikeTicket() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public MotorbikeTicket(int ticketNumber,String iDMotorbike) {
 		super(ticketNumber);
 		IDMotorbike = iDMotorbike;
-		// TODO Auto-generated constructor stub
 	}
-	public String getIDMotorbike() {
-		return IDMotorbike;
+	@Override
+	public double tienVe(){
+		return Constant.PRICE.XE_MAY;
 	}
-	public void setIDMotorbike(String iDMotorbike) {
-		IDMotorbike = iDMotorbike;
+	@Override
+	public double tienThu() {
+		return 0.9*Constant.PRICE.XE_MAY-100;
 	}
-	
-	
-
-	
-	
 }

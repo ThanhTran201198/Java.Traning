@@ -1,0 +1,9 @@
+package fis.java.topic01.practice02;
+
+public class BicycleTicket extends Ticket{
+	@Override
+	public double tienVe(){
+		return Constant.PRICE.XE_DAP;
+	}
+	
+}
