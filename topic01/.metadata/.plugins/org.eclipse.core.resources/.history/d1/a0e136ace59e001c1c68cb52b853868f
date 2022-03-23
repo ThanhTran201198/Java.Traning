@@ -1,5 +1,0 @@
-package fis.java.topic01;
-
-public interface IValidation {
-
-}

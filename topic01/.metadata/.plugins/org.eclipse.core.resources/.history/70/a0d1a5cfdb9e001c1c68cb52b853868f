@@ -1,6 +1,0 @@
-package fis.java.topic01;
-
-public class StudentList {
-	private Student[] students =new Student[100];
-	private int count;
-}
