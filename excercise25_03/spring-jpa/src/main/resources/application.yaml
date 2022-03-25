@@ -11,9 +11,9 @@ spring:
    maximum-pool-size: 10
    maximum-idle: 3
  application.name: training-jpa
- mvc:
-  pathmatch:
-   mathching-strategy: ant_path_matcher
+# mvc:
+#  pathmatch:
+#   mathching-strategy: ant_path_matcher
  
  
 logging:
