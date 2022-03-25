@@ -1,0 +1,23 @@
+server.port: 7888
+
+spring: 
+ datasource: 
+  driver-class-name : com.mysql.cj.jdbc.Driver
+  url : jdbc:mysql://localhost:3306/bank
+  username : root
+  password :
+  hikari:
+   pool-name: traning-pool
+   maximum-pool-size: 10
+   maximum-idle: 3
+ application.name: training-jpa
+ mvc:
+  pathmatch:
+   mathching-strategy: ant_path_matcher
+ 
+ 
+logging:
+  level:
+    com.zaxxer.hikari: debug
+    org.spring.framework.transaction: debug
+   

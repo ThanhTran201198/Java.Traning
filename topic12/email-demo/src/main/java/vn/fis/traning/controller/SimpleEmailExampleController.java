@@ -19,15 +19,13 @@ public class SimpleEmailExampleController {
     @RequestMapping("/sendSimpleEmail")
     public String sendSimpleEmail() {
 
-        // Create a Simple MailMessage.
-        SimpleMailMessage message = new SimpleMailMessage();
-        
-        message.setTo(MyConstants.FRIEND_EMAIL);
-        message.setSubject("Test Simple Email");
-        message.setText("Hello, Im testing Simple Email");
-
-        // Send Message!
-        this.emailSender.send(message);
+//        SimpleMailMessage message = new SimpleMailMessage();
+//        
+//        message.setTo(MyConstants.FRIEND_EMAIL);
+//        message.setSubject("Test Simple Email");
+//        message.setText("Hello, Im testing Simple Email");
+//
+//        this.emailSender.send(message);
 
         return "Email Sent!";
     }
