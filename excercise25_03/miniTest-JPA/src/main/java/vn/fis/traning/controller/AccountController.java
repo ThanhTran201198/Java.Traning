@@ -22,9 +22,10 @@ public class AccountController {
 	@PostMapping("/add")
 	@ResponseBody
 	public ResponseEntity<?> add(@RequestBody Account account){
+		
 		return  ResponseEntity.ok(accountService.addAccount(account));
 	}
-	
+
 	@PostMapping("/update")
 	@ResponseBody
 	public ResponseEntity<?> save(@RequestBody Account account){
@@ -34,8 +35,8 @@ public class AccountController {
 	@GetMapping("/delete/{accountId}")
 	@ResponseBody
 	public ResponseEntity<?> delete(@PathVariable Long accountId){
-		accountService.deleteAccount(accountId);
-		return ResponseEntity.ok("Done!");
+		
+		return ResponseEntity.ok(accountService.deleteAccount(accountId));
 	}
 	@GetMapping("/findById/{accountId}")
 	@ResponseBody
