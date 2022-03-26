@@ -17,14 +17,14 @@ public class AccountServiceImpl implements AccountService{
 	
 	@Override
 	public Account save(Account account) {
-		//Validate accountNo tồn tại chưa
+		//Validate accountNo chưa tồn tại thì mới tạo mới
 		account.setIssuedDate(new Date());
 		return accountRepo.save(account);
 	}
 
 	@Override
 	public Account update(Account account) {
-		//Validate accountNo tồn tại chưa
+		//Validate accountNo phải tồn tại rồi mới cho update
 		account.setIssuedDate(new Date());
 		Account account1 = accountRepo.save(account);
 		// Lưu lịch sử cập nhật trên bảng account_history
@@ -39,7 +39,7 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public Account getById(Long acountID) {
-		return accountRepo.getById(acountID);
+		return accountRepo.findById(acountID).orElse(null);
 	}
 
 	@Override

@@ -16,8 +16,8 @@ spring:
 #   mathching-strategy: ant_path_matcher
  
  
-logging:
-  level:
-    com.zaxxer.hikari: debug
-    org.spring.framework.transaction: debug
+#logging:
+#  level:
+#    com.zaxxer.hikari: debug
+#    org.spring.framework.transaction: debug
    

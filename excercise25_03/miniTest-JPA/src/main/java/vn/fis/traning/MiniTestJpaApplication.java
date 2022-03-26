@@ -1,13 +1,13 @@
-	package vn.fis.traning;
+package vn.fis.traning;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringJpaApplication {
+public class MiniTestJpaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringJpaApplication.class, args);
+		SpringApplication.run(MiniTestJpaApplication.class, args);
 	}
 
 }

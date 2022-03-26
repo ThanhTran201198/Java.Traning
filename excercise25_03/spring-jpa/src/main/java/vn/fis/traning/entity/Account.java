@@ -17,8 +17,9 @@ import lombok.Data;
 @Entity
 @Table(name="account")
 public class Account implements Serializable{
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonProperty("account_id")
 	@Column(name="account_id")
 	private Long accountId;
