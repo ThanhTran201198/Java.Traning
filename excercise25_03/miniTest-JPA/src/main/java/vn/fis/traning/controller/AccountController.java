@@ -22,7 +22,6 @@ public class AccountController {
 	@PostMapping("/add")
 	@ResponseBody
 	public ResponseEntity<?> add(@RequestBody Account account){
-		Account a =new Account();
 		return  ResponseEntity.ok(accountService.addAccount(account));
 	}
 	
@@ -43,12 +42,6 @@ public class AccountController {
 	public ResponseEntity<?> findById(@PathVariable Long accountId){
 		return ResponseEntity.ok(accountService.findById(accountId));
 	}
-	@GetMapping("/getById/{accountId}")
-	@ResponseBody
-	public ResponseEntity<?> getById (@PathVariable Long accountId) {
-		return ResponseEntity.ok(accountService.findById(accountId));
-	}
-	
 	@GetMapping("/findAll")
 	@ResponseBody
 	public ResponseEntity<?> findAll(){
