@@ -21,7 +21,7 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public Product updateProduct(Product product) {
-		if(!productRepo.existsByName(product.getName())) return null;
+//		if(!productRepo.existsByName(product.getName())) return null;
 		return productRepo.save(product);
 	}
 

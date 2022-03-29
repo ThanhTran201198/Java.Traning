@@ -28,7 +28,8 @@ public class OrderProductServiceImpl implements OrderProductService{
 	ProductRepo productRepo;
 	@Override
 	public OrderProduct addOrderProduct(OrderProduct orderProduct) {
-		Customer customer=customerRepo.findByUsername(orderProduct.getCustomer().getUsername());
+		if(orderProduct.getOrderId()!=null) return null;
+		Customer 	customer=customerRepo.findByUsername(orderProduct.getCustomer().getUsername());
 		if(customer==null) return null;
 		List<OrderRow> lst=orderProduct.getLstOrderRow();
 		Double totalPrice=0.0;
@@ -47,13 +48,27 @@ public class OrderProductServiceImpl implements OrderProductService{
 
 	@Override
 	public OrderProduct updateOrderProduct(OrderProduct orderProduct) {
+		if(orderProduct.getOrderId()==null) return null;
+		Customer customer=customerRepo.findByUsername(orderProduct.getCustomer().getUsername());
+		if(customer==null) return null;
+		List<OrderRow> lst=orderProduct.getLstOrderRow();
+		Double totalPrice=0.0;
+		for(OrderRow orderRow:lst) {
+			Product product=productRepo.findByName(orderRow.getProduct().getName());
+			if(product==null) return null;
+			orderRow.setProduct(product);
+			totalPrice+=product.getPrice()*orderRow.getNumber();
+		}
+		orderProduct.setLstOrderRow(lst);
+		orderProduct.setTotalPrice(totalPrice);
+		orderProduct.setCustomer(customer);
+		orderProduct.setCreateDate(new Date());
 		return orderProductRepo.save(orderProduct);
 	}
 
 	@Override
-	public String deleteOrderProduct(Long orderProductId) {
-		// TODO Auto-generated method stub
-		return null;
+	public void deleteOrderProduct(Long orderProductId) {
+		orderProductRepo.deleteById(orderProductId);
 	}
 
 }

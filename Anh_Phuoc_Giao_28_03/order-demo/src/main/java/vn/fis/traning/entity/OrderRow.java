@@ -23,7 +23,7 @@ public class OrderRow implements Serializable{
 //	@JoinColumn(name = "orderId",referencedColumnName="orderId")
 //	private OrderProduct orderProduct;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "productId",referencedColumnName="productId")
 	private Product product;
 	

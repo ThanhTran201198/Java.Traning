@@ -23,7 +23,7 @@ public class OrderProduct implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long orderId;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "customerId", referencedColumnName = "customerId")
 	private Customer customer;
 	private Date createDate;
@@ -32,12 +32,7 @@ public class OrderProduct implements Serializable{
 	@OneToMany(cascade = CascadeType.ALL, fetch= FetchType.LAZY)
 	@JoinColumn(name = "orderId",referencedColumnName="orderId")
 	private List<OrderRow> lstOrderRow;	
-	public OrderProduct(Customer customer, Date createDate, Double totalPrice) {
-		super();
-		this.customer = customer;
-		this.createDate = createDate;
-		this.totalPrice = totalPrice;
-	}
+
 	
 	
 }

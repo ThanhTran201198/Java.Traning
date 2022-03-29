@@ -5,5 +5,5 @@ import vn.fis.traning.entity.OrderProduct;
 public interface OrderProductService {
 	OrderProduct addOrderProduct(OrderProduct orderProduct);
 	OrderProduct updateOrderProduct(OrderProduct orderProduct);
-	String deleteOrderProduct(Long orderProductId);
+	void deleteOrderProduct(Long orderProductId);
 }
