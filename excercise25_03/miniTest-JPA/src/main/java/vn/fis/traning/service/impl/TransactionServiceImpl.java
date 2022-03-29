@@ -2,6 +2,8 @@ package vn.fis.traning.service.impl;
 
 import java.util.Date;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,7 @@ public class TransactionServiceImpl implements TransactionService{
 	AccountRepo accountRepo;
 
 	@Override
+//	@Transactional
 	public Transaction chuyenTien(ChuyenTienDto chuyenTienDto) {
 		Account fromAccount= accountRepo.findById(chuyenTienDto.getFromAccountId()).orElse(null);
 		Account toAccount= accountRepo.findById(chuyenTienDto.getToAccountId()).orElse(null);		
@@ -39,21 +42,17 @@ public class TransactionServiceImpl implements TransactionService{
 		}
 		Date date=new Date();
 		Transaction transaction=new Transaction(date, fromAccount, toAccount, chuyenTienDto.getAmount(), status, chuyenTienDto.getContent(), errorReason);
+		
 		if(status==1) {
 			fromAccount.setBalance(fromAccount.getBalance()-chuyenTienDto.getAmount());
 			toAccount.setBalance(toAccount.getBalance()+chuyenTienDto.getAmount());
-			accountRepo.save(fromAccount);
-			accountRepo.save(toAccount);
+//			accountRepo.save(fromAccount);
+//			accountRepo.save(toAccount);
 			transactionRepo.save(transaction);
 		}
 		else {
 			transactionRepo.save(transaction);
 		}
-		
-		
-		
-		
-		
 		return transaction;
 	}
 
