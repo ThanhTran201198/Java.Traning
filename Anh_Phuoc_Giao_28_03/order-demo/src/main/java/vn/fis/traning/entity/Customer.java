@@ -20,4 +20,20 @@ public class Customer implements Serializable{
 	private String username;
 	private String address;
 	private String phone;
+	
+	
+	public Customer(String username, String address, String phone) {
+		super();
+		this.username = username;
+		this.address = address;
+		this.phone = phone;
+	}
+
+
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 }

@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
@@ -19,6 +21,10 @@ public class Product implements Serializable{
 	private String name;
 	private Double price;
 	private String 	description ;
+	
+	@ManyToOne
+	@JoinColumn(name = "categoryId", referencedColumnName = "categoryId")
+	private Category category;
 //	Dùnng describe thì bị lỗi
 //	private String 	describe ;
 

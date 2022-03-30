@@ -36,6 +36,7 @@ public class OrderProductServiceImpl implements OrderProductService{
 		for(OrderRow orderRow:lst) {
 			Product product=productRepo.findByName(orderRow.getProduct().getName());
 			if(product==null) return null;
+			orderRow.setCreateDate(new Date());
 			orderRow.setProduct(product);
 			totalPrice+=product.getPrice()*orderRow.getNumber();
 		}

@@ -28,7 +28,6 @@ public class OrderProduct implements Serializable{
 	private Customer customer;
 	private Date createDate;
 	private Double totalPrice;
-	
 	@OneToMany(cascade = CascadeType.ALL, fetch= FetchType.LAZY)
 	@JoinColumn(name = "orderId",referencedColumnName="orderId")
 	private List<OrderRow> lstOrderRow;	

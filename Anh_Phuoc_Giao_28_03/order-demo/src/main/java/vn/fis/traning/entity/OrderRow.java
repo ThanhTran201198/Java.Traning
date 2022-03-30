@@ -1,6 +1,7 @@
 package vn.fis.traning.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -26,6 +27,6 @@ public class OrderRow implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "productId",referencedColumnName="productId")
 	private Product product;
-	
+	private Date createDate;
 	private Integer number;
 }
